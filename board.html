@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <link rel="icon" href="img/icons/blue-logo.png"/>
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/nav-sidebar.css">
+    <script src="smallest_backend_ever/mini_backend.js"></script>
+    <script src="js/nav-sidebar.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/board-templates.js"></script>
+    <script src="js/add-task.js"></script>
+    <script src="js/open-task.js"></script>
+    <script src="js/edit-task.js"></script>
+</head>
+
+<body onload="init()">
+    <div id="full-page">
+        <div w3-include-html="nav-sidebar.html" id="nav-sidebar-wrapper"></div>
+
+        <div onclick="closeAddTask()" class="container-opened-task" id="container-opened-task">
+            <!--filled with Java Script-->
+        </div>
+
+        <div class="whole-site" id="whole-site">
+
+            <div class="board-site">
+                <div class="headline-area">
+                    <p class="headline-board">Board</p>
+                    <div class="input-button">
+                        <div class="input-div">
+                            <input id="search-tasks" onkeyup="filterAllWorkspaces()" class="input-board"
+                                placeholder="Find Task">
+                            <div class="border-line"></div>
+                            <img class="search-icon" src="img/search-icon.png">
+                        </div>
+                        <button onclick="addTask('To do')" class="search-button">Add Task <b class="plus">+</b></button>
+                    </div>
+                </div>
+
+                <div class="processing-area">
+                    <div class="workspace-couple">
+                    <div class="task-workspace margin-right">
+                        <div class="processing-area-headlines-div">
+                            <p class="processing-area-headlines">To do</p>
+                            <div onclick="addTask('To do')" class="plus-icon">+</div>
+                        </div>
+                        <div id="to-do-area" class="task-area" ondrop="moveTo('To do'); removeHighlight('to-do-area')"
+                            ondragover="allowDrop(event); highlight('to-do-area')"
+                            ondragleave="removeHighlight('to-do-area')">
+                            <!--filled with Java Script-->
+                        </div>
+                    </div>
+                    <div class="task-workspace margin-right">
+                        <div class="processing-area-headlines-div">
+                            <p class="processing-area-headlines">In progress</p>
+                            <div onclick="addTask('In Progress')" class="plus-icon">+</div>
+                        </div>
+                        <div id="in-progress-area" class="task-area"
+                            ondrop="moveTo('In Progress'); removeHighlight('in-progress-area')"
+                            ondragover="allowDrop(event); highlight('in-progress-area')"
+                            ondragleave="removeHighlight('in-progress-area')">
+                            <!--filled with Java Script-->
+                        </div>
+                    </div>
+                    </div>
+                    <div class="workspace-couple">
+                    <div class="task-workspace margin-right">
+                        <div class="processing-area-headlines-div">
+                            <p class="processing-area-headlines">Awaiting feedback</p>
+                            <div onclick="addTask('Awaiting Feedback')" class="plus-icon">+</div>
+                        </div>
+                        <div id="awaiting-feedback-area" class="task-area"
+                            ondrop="moveTo('Awaiting Feedback'); removeHighlight('awaiting-feedback-area')"
+                            ondragover="allowDrop(event); highlight('awaiting-feedback-area')"
+                            ondragleave="removeHighlight('awaiting-feedback-area')">
+                            <!--filled with Java Script-->
+                        </div>
+                    </div>
+                    <div class="task-workspace">
+                        <div class="processing-area-headlines-div">
+                            <p class="processing-area-headlines">Done</p>
+                            <div onclick="addTask('Done')" class="plus-icon">+</div>
+                        </div>
+                        <div id="done-area" class="task-area" ondrop="moveTo('Done'); removeHighlight('done-area')"
+                            ondragover="allowDrop(event); highlight('done-area')"
+                            ondragleave="removeHighlight('done-area')">
+                            <!--filled with Java Script-->
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

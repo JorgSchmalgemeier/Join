@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <link rel="icon" href="img/icons/blue-logo.png">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <link rel="stylesheet" href="css/contacts-add-task.css">
+    <link rel="stylesheet" href="css/nav-sidebar.css">
+    <script src="js/contacts.js"></script>
+    <script src="js/contacts-add-task.js"></script>
+    <script src="js/contacts-templates.js"></script>
+    <script src="js/board-templates.js"></script>
+    <script src="smallest_backend_ever/mini_backend.js"></script>
+    <script src="js/nav-sidebar.js"></script>
+    <script>
+        setURL('https://joerg-schmalgemeier.developerakademie.net/join/smallest_backend_ever/');
+    </script>
+</head>
+
+<body onload="initContacts()">
+
+
+
+    <div w3-include-html="nav-sidebar.html" id="nav-sidebar-wrapper"></div>
+
+    <div class="background-div">
+        <div class="contacts-box" id="contacts"></div>
+        <div class="edit-contact" id="edit-contact"></div>
+        <div class="overlay-contact" id="overlay-contact"></div>
+        <div class="contacts-div-box" id="contacts-div-box">
+            <img onclick="closeContactData()" class="img-arrow" src="img/arrow.png">
+            <div class="contacts-div-box-name">
+                <h3 class="contacts-name">Contacts</h3>
+                <img class="contacts-name-img" src="img/Vector 5.png">
+                <h4 class="better-with">Better with a team</h4>
+                <img class="contact-name-img" src="img/Vector5.png">
+            </div>
+            <div class="contact-data" id="contact-data"></div>
+        </div>
+    </div>
+
+    <div class="overlay-grey" id="overlay-grey" onclick="closeOverlay()"></div>
+
+    <div id="dialog" class="dialog-gb d-none">
+       
+    </div>
+        <button class="new-contact" onclick="openNewContact()">
+            <h3 class="new-contact-name">New contact</h3>
+            <img class="capa" src="img/Capa 1.png">
+        </button>
+
+
+    <div id="popup-contact" class="d-none popup-contact">
+        <p class="popup-contact-p">
+            Contact successfully created
+        </p>
+    </div>
+</body>
+
+</html>
