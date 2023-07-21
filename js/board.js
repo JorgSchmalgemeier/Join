@@ -15,7 +15,7 @@ let year = dateToday.getFullYear();
 let month = dateToday.getMonth() + 1;
 let day = dateToday.getDate();
 
-setURL('https://joerg-schmalgemeier.developerakademie.net/join/smallest_backend_ever/');
+setURL("https://join.joerg-schmalgemeier.com/smallest_backend_ever/");
 
 
 /**

@@ -261,10 +261,10 @@ function closeInputs() {
     let categorys = document.getElementById('all-categorys');
     let contacts = document.getElementById('all-contacts');
 
-    if (categorys.classList.contains('display-flex')) {
+    if (typeof(categorys) != 'undefined' && categorys != null) {
         categorys.classList.remove('display-flex');
         document.getElementById('drop-down-box1').classList.remove('padding-bottom');
-    }
+    } 
 
     if (contacts.classList.contains('display-flex')) {
         contacts.classList.remove('display-flex');
@@ -345,7 +345,7 @@ function setCategory(category, color) {
  * Create input field for the user to write a name for a new category
  */
 function createNewCategory() {
-    document.getElementById('all-categorys').classList.remove('display-flex');
+    document.getElementById('all-categorys').classList.add('display-flex');
     document.getElementById('drop-down-box1').classList.remove('padding-bottom');
     document.getElementById('drop-down-box1').innerHTML = '';
     document.getElementById('drop-down-box1').innerHTML += showInputNewCategory();

@@ -109,7 +109,7 @@ function createNamesOnOpenedTask(name) {
 function createSubtasksOnOpenedTask(subtask, s, idToOpen) {
     return /*html*/ `
         <div class="new-subtask-opened-task">
-            <p style="margin: 0 4px 0 0 ;">&#9679; ${subtask['subtask']}</p>
+            <p style="margin: 0 4px 0 0 ;">&#8226; ${subtask['subtask']}</p>
         </div>
     `;
 }

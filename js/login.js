@@ -1,7 +1,7 @@
 let loadedContacts = [];
 let users = [];
 
-setURL("https://joerg-schmalgemeier.developerakademie.net/join/smallest_backend_ever/");
+setURL("https://join.joerg-schmalgemeier.com/smallest_backend_ever/");
 
 /**
  * This function moves the start-logo from the center to the left corner

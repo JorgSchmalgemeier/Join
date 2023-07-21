@@ -15,7 +15,7 @@ const monthNames = [
 
 let date = new Date();
 
-setURL("https://joerg-schmalgemeier.developerakademie.net/join/smallest_backend_ever/");
+setURL("https://join.joerg-schmalgemeier.com/smallest_backend_ever/");
 
 
 /**
