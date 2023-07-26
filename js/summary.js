@@ -68,7 +68,7 @@ function getTime() {
   let hours = date.getHours();
   let minutes = date.getMinutes();
   let wishingContainer = document.getElementById("wishes");
-  if (hours > 0 && hours < 12 && minutes < 60) {
+  if (hours >= 0 && hours < 12 && minutes < 60) {
     wishingContainer.innerHTML = "";
     wishingContainer.innerHTML = "Good Morning,";
   } else if (hours >= 12 && hours < 17 && minutes < 60) {
@@ -178,54 +178,4 @@ function getDate() {
   }
   todayDate.innerHTML = "";
   todayDate.innerHTML = `${monthNames[monthNum]} ${day}, ${year}`;
-}
-
-
-if (window.innerWidth <= 1200) {
-  showGreeting();
-  setTimeout(hideGreeting, 1475);
-}
-
-
-/**
- * This function shows the greeting text with the name of the current user
- * 
- */
-function showGreeting() {
-  if (window.innerWidth <= 1200) {
-    document
-      .querySelector(".main-section")
-      .classList.add("main-section-for-greeting");
-    document
-      .querySelector(".todo-section")
-      .classList.add("d-none");
-    document
-      .querySelector(".summary-wrapper")
-      .classList.add("d-none");
-    document
-      .querySelector(".greeting-wrapper")
-      .classList.add("greeting-wrapper-for-greeting");
-    document.getElementById("nav-sidebar-wrapper").classList.add("d-none");
-  }
-}
-
-
-/**
- * This function hides the greeting text with the name of the current user
- * 
- */
-function hideGreeting() {
-  document.querySelector(".greeting-wrapper").classList.remove("d-none");
-  document.querySelector(".greeting-wrapper").classList.add("d-none");
-  document
-    .querySelector(".main-section")
-    .classList.remove("main-section-for-greeting");
-  document
-    .querySelector(".todo-section")
-    .classList.remove("d-none");
-  document
-    .querySelector(".summary-wrapper")
-    .classList.remove("d-none");
-  // document.querySelector(".greeting-wrapper").classList.add("hide-greeting");
-  document.getElementById("nav-sidebar-wrapper").classList.remove("d-none");
 }
