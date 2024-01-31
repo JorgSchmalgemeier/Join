@@ -51,10 +51,10 @@ function createOpenedTask(idToOpen, date, id) {
             <img class="x-mark-opened-task" onclick="closeTask()" src="img/x-mark2.png">
             <div class="inner-div">
                 <div class="w-category-xmark">
-                    <p style="background-color: ${tasks[idToOpen]['category-color']}; padding: 6px 25px!important;" class="workspace-category opened-workspace-c">${tasks[idToOpen]['workspace-category']}</p>
+                    <p style="background-color: ${tasks[idToOpen]['category-color']}; padding: 6px 25px!important;" class="workspace-category opened-workspace-c task-max-width">${tasks[idToOpen]['workspace-category']}</p>
                     <div class="move-button-div">
                         <div onclick="showCategorysResponsivness(${idToOpen})" class="move-button">
-                            <p class="move-div-p">Move worspace</p>
+                            <p class="move-div-p-p">Move task</p>
                         </div>
                         <div id ="move-workspace-category" class="move-workspace-category"></div>
                     </div>
@@ -109,7 +109,8 @@ function createNamesOnOpenedTask(name) {
 function createSubtasksOnOpenedTask(subtask, s, idToOpen) {
     return /*html*/ `
         <div class="new-subtask-opened-task">
-            <p style="margin: 0 4px 0 0 ;">&#8226; ${subtask['subtask']}</p>
+            <p class="p-sub-edit">&#8226;</p>
+            <p class="p-sub-edit">${subtask['subtask']}</p>
         </div>
     `;
 }
@@ -117,11 +118,14 @@ function createSubtasksOnOpenedTask(subtask, s, idToOpen) {
 
 function createSubtasksOnEditableTask(subtask, s, idToOpen) {
     return /*html*/ `
-        <div class="new-subtask-opened-task">
-            <p style="margin: 0 4px 0 0 ;">${subtask['subtask']}</p>
+        <div class="new-subtask-opened-task" style="justify-content: space-between;">
+            <div class="sub-dott-name">
+                <p class="p-sub-edit">&#8226;</p>
+                <p class="sub-name-width" style="margin: 0 4px 0 0 ;">${subtask['subtask']}</p>
+            </div>
             <div style="margin-right: 10px;">
-            <input onclick="saveDoneSubtask(${idToOpen}, 'checkbox-sub${s}', ${s})" id="checkbox-sub${s}" type="checkbox">
-            <img onclick="deleteSubtask(${idToOpen}, ${s})" class="subtasks-edit-delete" src="img/delete.png">
+                <input onclick="saveDoneSubtask(${idToOpen}, 'checkbox-sub${s}', ${s})" id="checkbox-sub${s}" type="checkbox">
+                <img onclick="deleteSubtask(${idToOpen}, ${s})" class="subtasks-edit-delete" src="img/delete.png">
             </div>
         </div>
     `;
@@ -347,8 +351,8 @@ function createOldSubtastInput() {
 function newCheckBox(sub) {
     return /*html*/ `
         <div style="display: flex; margin-bottom: 10px;">
-            <input type="checkbox">
-        <p class="subtask-text">${sub}</p>
+            &#8226;    
+            <p class="subtask-text">${sub}</p>
         </div>
     `;
 }
@@ -358,7 +362,7 @@ function createContacts(con, c) {
     return /*html*/ `
         <div class="container-contacts">
             <p style="margin: 0;">${con['first-name']} ${con['last-name']}</p>
-            <input onclick="checkIfChecked('checkbox${c}', ${c})" id="checkbox${c}" class="contact-checkbox" type="checkbox" name="box">
+            <input id="checkbox${c}" onclick="checkIfChecked('checkbox${c}', ${c})" class="contact-checkbox" type="checkbox" name="box" >
         </div>
     `;
 }

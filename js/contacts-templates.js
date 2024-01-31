@@ -166,7 +166,7 @@ function editContactDataHTML(editcontactdata, i) {
                 </div>
                 <div class="overlay-input-div">
                     <div class="input-overlay-div">
-                        <input required type="text" maxlength="20" class="overlay-input" placeholder="Last-name"
+                        <input required type="text" class="overlay-input" placeholder="Last-name"
                             id="edit-last-name${i}" value="${editcontactdata['last-name']}">
                         <img src="img/Vector-name.png" class="overlay-input-name-img">
                     </div>
@@ -180,7 +180,7 @@ function editContactDataHTML(editcontactdata, i) {
                 </div>
                 <div class="overlay-input-div">
                     <div class="input-overlay-div">
-                        <input required type="text" minlength="7" class="overlay-input" placeholder="Phone"
+                        <input required type="text" minlength="7" maxlength="20" class="overlay-input" placeholder="Phone"
                             id="edit-phone${i}" value="${editcontactdata['phone']}">
                         <img src="img/Vector-phone.png" class="overlay-input-name-img">
                 </div>
